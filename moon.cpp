@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-#include <cctype>>
+#include <cctype>
 #include <stdio.h>
 #include <math.h>
 #include <ctime>
@@ -10,7 +10,7 @@
 using namespace std;
 
 
-int  IsLeapYear(int year) // провнрка високосного года
+int  IsLeapYear(int year) // ГЇГ°Г®ГўГ­Г°ГЄГ  ГўГЁГ±Г®ГЄГ®Г±Г­Г®ГЈГ® ГЈГ®Г¤Г 
 {
     return (((year % 4 == 0) &&
              (year % 100 != 0)) ||
@@ -23,7 +23,7 @@ struct Point
 };
 
 
-// проверка даты
+// ГЇГ°Г®ГўГҐГ°ГЄГ  Г¤Г ГІГ»
 int validDate(int day,int month,int year){
 
     int months[12]={31,28,31,30,31,30,31,31,30,31,30,31};
@@ -42,7 +42,7 @@ int validDate(int day,int month,int year){
 
 }
 
-// вывод в нужном виде
+// ГўГ»ГўГ®Г¤ Гў Г­ГіГ¦Г­Г®Г¬ ГўГЁГ¤ГҐ
 void getResult(double mset,double mrise,double peak,string date,int date2){
     string ndate;
     ndate=to_string(date2);
@@ -70,7 +70,7 @@ int main()
     char datebuf[8];
 
     cout<<"Enter the date. DD/MM/YYYY"<<endl;
-    //считывание и проверка даты и файла
+    //Г±Г·ГЁГІГ»ГўГ Г­ГЁГҐ ГЁ ГЇГ°Г®ГўГҐГ°ГЄГ  Г¤Г ГІГ» ГЁ ГґГ Г©Г«Г 
     while (true){
         year="";
         day="";
@@ -137,7 +137,7 @@ int main()
                     istringstream iss(line);
 
                     iss >> cl1>>cl2>>cl3>>cl4>>cl5;
-                    // вычисление восхода и заката
+                    // ГўГ»Г·ГЁГ±Г«ГҐГ­ГЁГҐ ГўГ®Г±ГµГ®Г¤Г  ГЁ Г§Г ГЄГ ГІГ 
                     if (cl5>=0 && pcl5<0){
                         br=pcl5;
                         kr=(cl5-pcl5)/(cl3-pcl3);
@@ -152,7 +152,7 @@ int main()
                         sfound=true;
                     }
 
-                    //вычисление точек для нахождеия пика
+                    //ГўГ»Г·ГЁГ±Г«ГҐГ­ГЁГҐ ГІГ®Г·ГҐГЄ Г¤Г«Гї Г­Г ГµГ®Г¦Г¤ГҐГЁГї ГЇГЁГЄГ 
                     if (p1.x != cl3 && !found1){
                         p1.x=cl3;
                         p1.y=cl5;
@@ -178,7 +178,7 @@ int main()
                     pcl3=cl3;
                 }
         }
-        //вычисление пика
+        //ГўГ»Г·ГЁГ±Г«ГҐГ­ГЁГҐ ГЇГЁГЄГ 
         a= (p3.y-(p3.x*(p2.y-p1.y)+p2.x*p1.y-p1.x*p2.y)/(p2.x-p1.x))/(p3.x*(p3.x-p1.x-p2.x)+p1.x*p2.x);
         b= (p2.y-p1.y)/(p2.x-p1.x) - a*(p1.x+p2.x);
         x=-b/(2*a);
