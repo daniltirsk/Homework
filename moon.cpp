@@ -5,7 +5,6 @@
 #include <cctype>
 #include <stdio.h>
 #include <math.h>
-#include <ctime>
 
 using namespace std;
 
